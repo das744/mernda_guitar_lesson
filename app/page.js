@@ -1,17 +1,25 @@
-import ContactForm from "../components/ContactForm";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import About from "@/components/About";
-import Services from "@/components/Services";
-import Navbar from "@/components/Navbar";
+import ContactForm from "../components/Contact/Contact";
+import Hero from "@/components/Hero/Hero";
+import Banner from "@/components/Banner/Banner"
+import Footer from "@/components/Footer/Footer";
+import About from "@/components/About/About";
+import Services from "@/components/Service/ServiceSection";
+import Navbar from "@/components/Navbar/Navbar";
+import WorkingProcess from "@/components/WorkingProcess/WorkingProcess";
+import Divider from "@/components/Divider/Divider";
+import Quote from "@/components/Quote/Quote";
+import SplitBackground from "@/components/splitBackground/splitBackground";
 
 export default function Home() {
   return (
     <main>
-      <Header/>
-      <h1>Welcome to Our Website</h1>
+     <Navbar/>
+    {/* <Hero/> */}
+     <Quote/>
       <About/>
+      <WorkingProcess/>
       <Services/>
+      <Divider/>
       <ContactForm />
       <Footer/>
     </main>

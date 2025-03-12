@@ -1,0 +1,313 @@
+.heroSection {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+  background: #f4f4f4;
+  flex-wrap: wrap;
+}
+
+.heroTopRow {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+/* ======================= LEFT SIDE ======================= */
+.heroLeft {
+ 
+  display: flex;
+  flex-direction: column;
+  padding-right: 0;
+  /* margin-right: 50px;  */
+}
+
+.heroLeft h1 {
+  display: flex;
+  margin-left: 10rem;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Different colors and staggered start positions */
+.heroLeft h1 .line1 {
+  color: rgb(50, 177, 128);
+  transform: translateX(-30px);
+  font-size: 4.5rem;
+  text-shadow: .2rem .3rem rgba(0, 0, 0, 0.1);
+}
+.heroLeft h1 .line2 {
+  color: rgb(83, 126, 199);
+  transform: translateX(20px);
+  font-size: 3.5rem;
+  font-style: italic;
+  text-shadow: .2rem .3rem rgba(0, 0, 0, 0.1);
+}
+.heroLeft h1 .line3 {
+  color: rgb(92, 192, 92);
+  transform: translateX(-50px);
+  font-size: 3.5rem;
+  text-shadow: .2rem .3rem rgba(0, 0, 0, 0.1);
+ 
+}
+.heroLeft h1 .line4 {
+  color: orange;
+  transform: translateX(10px);
+  font-size: 3rem;
+  font-style: italic;
+  text-shadow: .2rem .3rem rgba(0, 0, 0, 0.1);
+}
+
+/* Small Image & Text */
+.smallImgText {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.smallImg {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 1rem 1rem rgb(167, 166, 166);
+}
+
+.textContent {
+  display: flex;
+  flex-direction: column;
+}
+
+.btn {
+  margin-top: 8px;
+  padding: 8px 16px;
+  background: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.btn:hover {
+  background: #0056b3;
+}
+
+/* ======================= RIGHT SIDE ======================= */
+.heroRight {
+  width: 55%;
+  display: flex;
+  justify-content: center;
+}
+
+.imageContainer {
+  display: flex;
+  gap: 20px;
+}
+
+/* Image Styles */
+.imgWrapper {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px 10px;
+  
+}
+
+/* 1st Image */
+.img1 {
+  width: 100px;
+  height: 400px;
+  box-shadow: 0 .4rem .4rem rgb(167, 166, 166);
+  
+}
+
+/* 2nd Image */
+.img2 {
+  width: 500px;
+  height: 400px;
+  box-shadow: 0 1rem 1rem rgb(167, 166, 166);
+}
+
+/* Overlay effect */
+.overlay {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 84%;
+  background: rgba(0, 255, 0, 0.5); /* Green overlay */
+  transition: top 0.3s ease-in-out;
+}
+
+/* Hover effect: Overlay comes from top */
+.imgWrapper:hover .overlay {
+  top: 0;
+}
+
+
+
+.sparkleLine {
+  border: none;
+  border-top: .5px solid black;
+  background: url('https://images.unsplash.com/photo-1740543860615-3f6b1d654dd9?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxNDF8fHxlbnwwfHx8fHw%3D') repeat-x;
+  margin: 20px 0;
+  box-shadow: 2rem 2rem 2rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.gridLayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gridLayout .left {
+  display: flex;
+  align-items: center;
+}
+
+.gridLayout .left .circleImage {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+
+.gridLayout .left .circleImage img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-right: 20px;
+  box-shadow: 0 1rem 1rem rgb(167, 166, 166);
+}
+.gridLayout .left, .gridLayout .right {
+  width: 45%;
+}
+
+.gridLayout .right {
+  position: relative; 
+  text-align: justify;
+}
+
+.gridLayout .right::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  bottom: 0;
+  right: 100%; /* Position it to the right of the .right container */
+  width: .5px; /* Line width */
+  margin-right: 2rem;
+  background-color: black; /* Line color */
+}
+
+.gridLayout .right p {
+  line-height: 1.6;
+  
+}
+
+.gridLayout .left, .gridLayout .right {
+  width: 45%;
+}
+
+.gridLayout .right p {
+  font-size: 1rem;
+  color: #333;
+}
+
+.heroSection img {
+  max-width: 100%;
+  display: block;
+}
+
+.heroSection img:hover {
+  opacity: 0.9;
+}
+
+/* ======================= RESPONSIVENESS ======================= */
+@media (max-width: 1024px) {
+  .heroSection {
+ 
+    align-items: center;
+  }
+
+  .heroLeft h1 {
+    font-size: 1.5rem;
+    margin-left: 0;
+  }
+
+
+  .smallImgText {
+    justify-content: center;
+  }
+
+  .imageContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .img1 {
+    width: 400px;
+    height: 250px;
+  }
+
+  .img2 {
+    width: 200px;
+    height: 200px;
+  }
+  .gridLayout{
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 600px) {
+  .heroTopRow{
+    flex-direction: column;
+  }
+  .heroLeft h1 {
+    font-size: 1.5rem;
+    margin-left: 0;
+  }
+  .heroRight{
+    flex-direction: column;
+  }
+  .img1 {
+    width: 500px;
+    height: 100px;
+  }
+
+  .img2 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .smallImgText img {
+    width: 40px;
+    height: 40px;
+  }
+}
+.dividerContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 2rem;
+  background: #fbf9f9;
+}
+
+.dividerText {
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 2rem 3rem;
+  background: rgb(240, 239, 239);
+  border-radius: 4rem;
+}
+
+.dividerButton {
+  padding: 10px 20px;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease-in-out;
+}
+
+.dividerButton:hover {
+  transform: scale(1.1);
+}
