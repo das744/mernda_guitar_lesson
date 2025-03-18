@@ -68,7 +68,7 @@ export default function Quote() {
           <img src="https://cdn.pixabay.com/photo/2023/01/06/20/32/guitar-7702069_1280.png" alt="Wide" className={styles.wideImage} />
         </div>
         <h2 className={styles.heading}>Master the Guitar with Expert-Led Lessons.</h2>
-        <p className={styles.text}>Unlock your musical potential with personalized guitar lessons from skilled instructors.</p>
+        <p className={styles.text}>Unlock your musical potential with personalised guitar lessons from skilled instructors.</p>
         <div className={styles.socialIcons}>
           <a href="#"><FontAwesomeIcon icon={faFacebookF} className={styles.icon}/></a>
           <a href="#"><FontAwesomeIcon icon={faTwitter} className={styles.icon} /></a>
