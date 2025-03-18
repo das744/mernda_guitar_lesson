@@ -1,11 +1,26 @@
+
 module.exports = {
-    webpack: (config) => {
+  webpack: (config, { isServer }) => {
+    // Avoid bundling node core modules like dns on the client-side
+    if (!isServer) {
       config.resolve.fallback = {
-        fs: false,
-        tls: false,
+        ...config.resolve.fallback,
+        dns: false,
         net: false,
+        tls: false,
       };
-      return config;
-    },
-  };
-  
+    }
+    return config;
+  },
+};
+
+  // module.exports = {
+//     webpack: (config) => {
+//       config.resolve.fallback = {
+//         fs: false,
+//         tls: false,
+//         net: false,
+//       };
+//       return config;
+//     },
+//   };

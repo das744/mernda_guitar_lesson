@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from "react";
-import styles from "./Contact.module.css"
+import styles from "./Contact.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faMapMarkerAlt,
@@ -23,15 +23,23 @@ export default function Contact() {
 
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState("");
-
+  
+  // Handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Handle form submission
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setResponse("");
+
+    if (!formData.name || !formData.email || !formData.message) {
+      setResponse("All fields are required.");
+      setLoading(false);
+      return;
+    }
 
     const res = await fetch("/api/contact", {
       method: "POST",
@@ -51,7 +59,7 @@ export default function Contact() {
   };
 
   return (
-    <div className={styles.contactContainer} id="contact" >
+    <div className={styles.contactContainer} id="contact">
       {/* Left Side - Contact Info */}
       <div className={styles.contactInfo}>
         <h2>Contact Information</h2>
@@ -82,33 +90,49 @@ export default function Contact() {
         <h2>Get in Touch</h2>
         <p>Have questions about lessons or need more information? Reach out to us, and we’ll be happy to assist you in starting your guitar learning journey.</p>
         <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            name="name"
-            placeholder="Your Name"
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            type="email"
-            name="email"
-            placeholder="Your Email"
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <textarea
-            name="message"
-            placeholder="Your Message"
-            value={formData.message}
-            onChange={handleChange}
-            required
-          />
+          <div className={styles.formGroup}>
+            {/* <label htmlFor="name">Your Name</label> */}
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Your Name"
+              value={formData.name}
+              onChange={handleChange}
+              required
+            />
+          </div>
+          
+          <div className={styles.formGroup}>
+            {/* <label htmlFor="email">Your Email</label> */}
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Your Email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className={styles.formGroup}>
+            {/* <label htmlFor="message">Your Message</label> */}
+            <textarea
+              id="message"
+              name="message"
+              placeholder="Your Message"
+              value={formData.message}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
           <button type="submit" disabled={loading}>
             {loading ? "Sending..." : "Send Message"}
           </button>
         </form>
+
         {response && <p className={styles.responseMessage}>{response}</p>}
       </div>
     </div>
