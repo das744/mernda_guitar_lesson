@@ -1,3 +1,4 @@
+// pages/api/contact.js
 import nodemailer from "nodemailer";
 
 export default async function handler(req, res) {
@@ -6,10 +7,10 @@ export default async function handler(req, res) {
 
     // Configure the transporter
     const transporter = nodemailer.createTransport({
-      service: "gmail", // Use "Gmail", "Outlook", "Yahoo", etc.
+      service: "gmail", 
       auth: {
-        user: process.env.EMAIL_USER, // Set this in .env.local
-        pass: process.env.EMAIL_PASS, // Set this in .env.local
+        user: process.env.EMAIL_USER, 
+        pass: process.env.EMAIL_PASS,
       },
     });
 

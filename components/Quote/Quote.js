@@ -13,7 +13,7 @@ import {
 export default function Quote() {
   const formRef = useRef(null);
   const contentRef = useRef(null);
-  const [formData, setFormData] = useState({ email: '', requirement: '', message: '' });
+  const [formData, setFormData] = useState({ name:"", email: '', requirement: '', message: '' });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -68,7 +68,7 @@ export default function Quote() {
           <img src="https://cdn.pixabay.com/photo/2023/01/06/20/32/guitar-7702069_1280.png" alt="Wide" className={styles.wideImage} />
         </div>
         <h2 className={styles.heading}>Master the Guitar with Expert-Led Lessons.</h2>
-        <p className={styles.text}>Unlock your musical potential with personalized guitar lessons from skilled instructors.</p>
+        <p className={styles.text}>Unlock your musical potential with personalised guitar lessons from skilled instructors.</p>
         <div className={styles.socialIcons}>
           <a href="#"><FontAwesomeIcon icon={faFacebookF} className={styles.icon}/></a>
           <a href="#"><FontAwesomeIcon icon={faTwitter} className={styles.icon} /></a>
@@ -79,12 +79,19 @@ export default function Quote() {
         <form className={styles.form} onSubmit={handleSubmit}>
           <h3 className={styles.formHeading}>Request for a Complementary Lesson</h3>
           <div className={styles.formGroup}>
+            
+            <label>Name</label>
+            <input type="text" name="name" className={styles.input} value={formData.name} onChange={handleChange} required />
+          </div>
+          <div className={styles.formGroup}>
+
             <label>Email</label>
             <input type="email" name="email" className={styles.input} value={formData.email} onChange={handleChange} required />
           </div>
           <div className={styles.formGroup}>
             <label>Requirement</label>
             <select name="requirement" className={styles.select} value={formData.requirement} onChange={handleChange} required>
+             
               <option value="">Select an option</option>
               <option value="online">Online Guitar Lesson</option>
               <option value="in-person">In Person Guitar Lesson</option>
