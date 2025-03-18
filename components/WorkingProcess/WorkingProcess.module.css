@@ -1,0 +1,105 @@
+.features h1{
+  text-align: center;
+  margin: 5rem;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+ 
+}
+
+.workingProcess {
+  /* display: flex;
+  align-items: center;
+  justify-content: space-between; */
+  padding: 2rem;
+  gap: 50px;
+  overflow: hidden;
+
+}
+
+/* === Left Side - Image Parts === */
+.imageContainer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+/* .imagePart {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  background-image: url("https://images.unsplash.com/photo-1740916856932-7b02aeca973b?w=900&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxN3x8fGVufDB8fHx8fA%3D%3D");
+  background-size: 300px 300px;
+  background-repeat: no-repeat;
+  opacity: 0;
+}
+
+
+.part1 { background-position: top left; top: 0; left: 0; }
+.part2 { background-position: top right; top: 0; right: 0; }
+.part3 { background-position: bottom left; bottom: 0; left: 0; }
+.part4 { background-position: bottom right; bottom: 0; right: 0; } */
+
+/* === Right Side - Process Steps Grid === */
+.processGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.processItem {
+  background: #f8f8f8;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  opacity: 0;
+  transition: 0.3s;
+  box-shadow: 2rem 2rem 2rem 0 rgba(0, 0, 0, 0.1);
+}
+.processItem h3, .processItem p{
+  font-family:  'Inter', sans-serif;
+  font-weight: 300;
+}
+.processItem:hover {
+  background: #ddd;
+}
+
+.button {
+  background: var(--primary);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.button:hover {
+  background:  var(--tertiary);
+}
+
+.zigzagSvg{
+  background: rgb(242, 241, 241);
+
+
+}
+.zigzagContent{
+  text-align: center;
+
+}
+.zigzagContent h2, .zigzagButton{
+  font-family:  'Inter', sans-serif;
+  font-weight: 200;
+}
+.zigzagButton{
+  margin-bottom: 2rem;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  border-radius: 8px;
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 2rem 2rem 2rem 0 rgba(0, 0, 0, 0.1);
+}
+
+
+.zigzagButton:hover {
+  transform: scale(1.1);
+}
