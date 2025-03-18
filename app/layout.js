@@ -6,8 +6,8 @@ const poppins = Poppins({ subsets: ['latin'], weight: ['400', '600', '700'] });
 const lora = Lora({ subsets: ['latin'], weight: ['400', '600'] });
 
 export const metadata = {
-  title: "Portfolio Website",
-  description: "Your website description",
+  title: "Portfolio Website-Freelance Web Developer in Melbourne",
+  description: "Freelance Web Developer in MElbourne",
 };
 
 export default function RootLayout({ children }) {
