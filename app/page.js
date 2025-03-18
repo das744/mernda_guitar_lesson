@@ -9,6 +9,7 @@ import WorkingProcess from "@/components/WorkingProcess/WorkingProcess";
 import Divider from "@/components/Divider/Divider";
 import Quote from "@/components/Quote/Quote";
 import SplitBackground from "@/components/splitBackground/splitBackground";
+import Reviews from "@/components/Reviews/Reviews";
 
 export default function Home() {
   return (
@@ -20,6 +21,7 @@ export default function Home() {
       <WorkingProcess/>
       <Services/>
       <Divider/>
+      <Reviews/>
       <ContactForm />
       <Footer/>
     </main>

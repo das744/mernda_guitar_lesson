@@ -42,12 +42,12 @@ const WorkingProcess = () => {
   }, []); 
 
   return (
-    <section id="features" className={styles.features} >
+    <section id="feature" className={styles.features}>
       <h1> Feature</h1>
     <div className={styles.workingProcess}>
      
       {/* Left Side - Animated Image Parts */}
-      <div className={styles.imageContainer}>
+      {/* <div className={styles.imageContainer}>
         {[...Array(4)].map((_, index) => (
           <div
             key={index}
@@ -55,7 +55,7 @@ const WorkingProcess = () => {
             className={`${styles.imagePart} ${styles[`part${index + 1}`]}`}
           />
         ))}
-      </div>
+      </div> */}
 
       {/* Right Side - Process Grid */}
       <div className={styles.processGrid}>

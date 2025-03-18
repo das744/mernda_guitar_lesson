@@ -1,6 +1,5 @@
 
 
-
 "use client";
 import { useEffect } from "react";
 import gsap from "gsap";
@@ -60,17 +59,18 @@ const Navbar = () => {
           <a href="#feature" className="nav-item"> Feature</a>
         </div>
       </div>
+        {/* Sparkle Icon */}
+        <div className="sparkleIcon">✨</div>
 
       {/* Right Side */}
       <div className={styles.navbarRight}>
         <div className={styles.connect}>
-          <a href="#contact" className="nav-item"><i className="fa fa-phone"></i> Contact</a>
+          <a href="#contact" className="nav-item"> Contact</a>
         </div>
-        <button className={styles.getQuote}>Get Quote</button>
+        <a href="#contact"> <button className={styles.getQuote}>Get Free Lesson</button></a>  
       </div>
 
-      {/* Sparkle Icon */}
-      <div className="sparkleIcon">✨</div>
+    
     </nav>
   );
 };

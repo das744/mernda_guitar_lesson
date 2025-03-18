@@ -75,7 +75,7 @@
     font-weight: 200;
   }
   .subscribe button {
-    background: #f04;
+    background: var(--red-color);
     color: white;
     border: none;
     padding: 8px 12px;

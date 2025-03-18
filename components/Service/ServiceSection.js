@@ -26,6 +26,9 @@ const ServicesSection = () => {
   return (
     <section className={styles.servicesSection} id="services">
      
+     <div className={styles.headingContainer}>
+        <h2 className={styles.serviceHeading}> Services</h2>
+      </div>
 
       {/* Services Grid Container */}
       <div className={styles.servicesGrid}>
@@ -66,9 +69,7 @@ const ServicesSection = () => {
         </div>
       </div>
        {/* Vertical Heading Section */}
-       <div className={styles.headingContainer}>
-        <h2 className={styles.serviceHeading}> Services</h2>
-      </div>
+    
     </section>
   );
 };

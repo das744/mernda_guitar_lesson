@@ -10,11 +10,10 @@
 }
 
 .aboutHeading {
-
   writing-mode: vertical-rl; 
   transform: rotate(180deg);  
   font-size: 3rem;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: white;
   text-transform: uppercase;
   height: 100vh; 
@@ -27,6 +26,7 @@
   width: 80vw;
   height: 70vh;
   position: relative;
+ 
 }
 
 .bigImage {

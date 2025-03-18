@@ -4,7 +4,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import styles from "./divider.module.css";
+import styles from "./Divider.module.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -53,7 +53,7 @@ const Divider = () => {
       <div className={styles.content}>
         <h2 className={styles.heading}>Enhance Your Workflow</h2>
         <button ref={buttonRef} className={styles.animatedBtn}>
-          Start Now
+          Contact Now
         </button>
       </div>
     </div>

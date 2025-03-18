@@ -7,6 +7,9 @@
 :root{
   --primary: rgb(53, 47, 47);
   --text-primary: #333;
+  --secondary: #f8f8f8;
+  --tertiary: #8b0000;
+  --red-color: #d03;
 }
 
 * {

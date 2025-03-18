@@ -8,11 +8,13 @@
 }
 
 .workingProcess {
-  display: flex;
+  /* display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; */
   padding: 2rem;
   gap: 50px;
+  overflow: hidden;
+
 }
 
 /* === Left Side - Image Parts === */
@@ -72,7 +74,7 @@
 }
 
 .button:hover {
-  background: #0056b3;
+  background:  var(--tertiary);
 }
 
 .zigzagSvg{

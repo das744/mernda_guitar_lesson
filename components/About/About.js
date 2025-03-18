@@ -6,32 +6,32 @@ import styles from "./About.module.css";
 
 const imageData = [
   {
-    bigImgSrc: "https://plus.unsplash.com/premium_photo-1723860011127-5029e9b914be?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D", // Add corresponding big image for each small image
-    imgSrc: "https://plus.unsplash.com/premium_photo-1723860011127-5029e9b914be?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D",
+    bigImgSrc: "/img/img2.png",
+    imgSrc:  "/img/img2.png",
     title: "Experienced Instructors",
     text: "Our team consists of professional guitarists with years of teaching and performance experience, ensuring you get top-notch instruction.",
   },
   {
-    bigImgSrc: "https://plus.unsplash.com/premium_photo-1741030501566-e0183860a80f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2NHx8fGVufDB8fHx8fA%3D%3D",
-    imgSrc: "https://plus.unsplash.com/premium_photo-1741030501566-e0183860a80f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw2NHx8fGVufDB8fHx8fA%3D%3D",
+    bigImgSrc: "/img/img10.jpg",
+    imgSrc: "/img/img10.jpg",
     title: "Tailored Lessons",
     text: "We understand that every student is different, so we personalize our lessons to fit your skill level and musical interests.",
   },
   {
-    bigImgSrc: "https://images.unsplash.com/photo-1740953669187-70139f77d1ec?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMnx8fGVufDB8fHx8fA%3D%3D",
-    imgSrc: "https://images.unsplash.com/photo-1740953669187-70139f77d1ec?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwyMnx8fGVufDB8fHx8fA%3D%3D",
+    bigImgSrc: "/img/img2.png",
+    imgSrc:  "/img/img2.png",
     title: "Flexible Learning Options",
     text: "Learn at your own pace with in-person or online lessons, designed to fit your schedule.",
   },
   {
-    bigImgSrc: "https://plus.unsplash.com/premium_photo-1741005641996-f0e15c7c276b?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw4MHx8fGVufDB8fHx8fA%3D%3D",
-    imgSrc: "https://plus.unsplash.com/premium_photo-1741005641996-f0e15c7c276b?w=700&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw4MHx8fGVufDB8fHx8fA%3D%3D",
+    bigImgSrc: "/img/img3.png",
+    imgSrc:  "/img/img3.png",
     title: "Passionate About Music",
     text: "We are committed to nurturing a love for music and helping students grow as musicians, no matter their journey.",
   },
   {
-    bigImgSrc: "https://images.unsplash.com/photo-1741070487520-907d1359cb95?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0N3x8fGVufDB8fHx8fA%3D%3D",
-    imgSrc: "https://images.unsplash.com/photo-1741070487520-907d1359cb95?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw0N3x8fGVufDB8fHx8fA%3D%3D",
+    bigImgSrc: "/img/img9.png",
+    imgSrc:  "/img/img9.png",
     title: "All Ages & Levels Welcome",
     text: "Whether you're just starting or looking to perfect your technique, we offer lessons for all ages and levels.",
   },
@@ -70,7 +70,7 @@ const About = () => {
   }, [currentIndex]);
 
   return (
-    <section className={styles.aboutSection}>
+    <section className={styles.aboutSection} id="about">
       <div className={styles.aboutHeading}>
         <h2>About</h2>
       </div>

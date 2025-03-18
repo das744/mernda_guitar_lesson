@@ -42,8 +42,7 @@
 .wideImage {
   width: 90%;
   height: auto;
-  /* max-height: 500px; */
-  box-shadow: 0 2px 10px rgba(2, 2, 2, 0.6);
+  /* box-shadow: 0 2px 10px rgba(2, 2, 2, 0.6); */
   border-radius: 1rem;
 }
 
@@ -83,17 +82,15 @@
 .heading {
   font-size: 1.5rem;
   font-weight: 200px;
-  font-family:  'Inter', sans-serif;
   margin-top: 1rem;
   color: #111;
-  font-family:  'Inter', sans-serif;
   font-weight: 300;
 }
 
 .text {
   margin-top: 0.5rem;
   color: #333;
-  font-family:  'Inter', sans-serif;
+ 
   font-weight: 200;
 }
   /* Social Icons */
@@ -106,7 +103,7 @@
   
   .socialIcons a {
     font-size: 20px;
-    background-color: var(--text-primary);
+    background-color: var(--red-color);
     padding:.7rem;
     border-radius: 10%;
     color: white;
@@ -115,7 +112,8 @@
   }
   
   .socialIcons a:hover {
-    color: #ff0000;
+    background:  var(--tertiary);;
+    color: #fff;
   }
 .form {
   background: white;
@@ -158,7 +156,7 @@
 .button {
   width: 100%;
   padding: 0.75rem;
-  background-color: var(--text-primary);
+  background-color: var(--red-color);
   color: white;
   border: none;
   border-radius: 4px;
@@ -168,5 +166,5 @@
 }
 
 .button:hover {
-  background-color: darkred;
+  background-color: var(--tertiary);
 }
