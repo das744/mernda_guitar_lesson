@@ -18,7 +18,7 @@ const imageData = [
     text: "We understand that every student is different, so we personalize our lessons to fit your skill level and musical interests.",
   },
   {
-    bigImgSrc: "/img/img2.png",
+    bigImgSrc: "/img/img11.jpg",
     imgSrc:  "/img/img2.png",
     title: "Flexible Learning Options",
     text: "Learn at your own pace with in-person or online lessons, designed to fit your schedule.",
