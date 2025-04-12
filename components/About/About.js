@@ -30,7 +30,7 @@ const imageData = [
     text: "We are committed to nurturing a love for music and helping students grow as musicians, no matter their journey.",
   },
   {
-    bigImgSrc: "/img/img9.png",
+    bigImgSrc: "/img/img9.jpg",
     imgSrc:  "/img/img9.png",
     title: "All Ages & Levels Welcome",
     text: "Whether you're just starting or looking to perfect your technique, we offer lessons for all ages and levels.",
