@@ -71,7 +71,7 @@ export default function Contact() {
         <h2>Contact Information</h2>
         <p><FontAwesomeIcon icon={faMapMarkerAlt} /> 12 Nicolson Road, Mill Park- Victoria</p>
         <p><FontAwesomeIcon icon={faPhoneAlt} /> +61 0421 3265</p>
-        <p><FontAwesomeIcon icon={faEnvelope} /> info@northernguitarlesson.com</p>
+        <p><FontAwesomeIcon icon={faEnvelope} /> info.northernmelbourneguitarlesson.com</p>
         <div className={styles.socialIcons}>
           <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
           <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
