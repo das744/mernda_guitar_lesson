@@ -19,7 +19,7 @@ const imageData = [
   },
   {
     bigImgSrc: "/img/img11.jpg",
-    imgSrc:  "/img/img2.png",
+    imgSrc:  "/img/img11.jpg",
     title: "Flexible Learning Options",
     text: "Learn at your own pace with in-person or online lessons, designed to fit your schedule.",
   },
@@ -31,7 +31,7 @@ const imageData = [
   },
   {
     bigImgSrc: "/img/img9.jpg",
-    imgSrc:  "/img/img9.png",
+    imgSrc:  "/img/img9.jpg",
     title: "All Ages & Levels Welcome",
     text: "Whether you're just starting or looking to perfect your technique, we offer lessons for all ages and levels.",
   },
