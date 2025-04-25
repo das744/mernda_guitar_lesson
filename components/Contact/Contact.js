@@ -1,3 +1,4 @@
+//components/Contact.js
 
 "use client";
 
@@ -15,6 +16,9 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
+import { db } from "@/lib/firebase"; // Make sure this is correct path to your Firebase config
+import { collection, addDoc } from "firebase/firestore";
+
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -25,51 +29,83 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [response, setResponse] = useState({ message: "", type: "" });
 
-  // Handle input changes
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  // Handle form submission
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setLoading(true);
+  //   setResponse({ message: "", type: "" });
+
+  //   if (!formData.name || !formData.email || !formData.message) {
+  //     setResponse({ message: "All fields are required.", type: "error" });
+  //     setLoading(false);
+  //     return;
+  //   }
+
+  //   try {
+  //     await addDoc(collection(db, "messages"), {
+  //       name: formData.name,
+  //       email: formData.email,
+  //       message: formData.message,
+  //       timestamp: new Date(),
+  //     });
+
+  //     setResponse({ message: "Message sent! We'll get back soon.", type: "success" });
+  //     setFormData({ name: "", email: "", message: "" });
+  //   } catch (error) {
+  //     console.error("Firestore error:", error);
+  //     setResponse({ message: "Something went wrong. Please try again.", type: "error" });
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     setResponse({ message: "", type: "" });
-
+  
     if (!formData.name || !formData.email || !formData.message) {
       setResponse({ message: "All fields are required.", type: "error" });
       setLoading(false);
       return;
     }
-
+  
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-
+  
       const data = await res.json();
-      setLoading(false);
-
+  
       if (data.success) {
-        setResponse({ message: "Your message has been sent successfully!", type: "success" });
+        setResponse({ message: data.message, type: "success" });
         setFormData({ name: "", email: "", message: "" });
       } else {
-        setResponse({ message: "Failed to send message. Please try again.", type: "error" });
+        setResponse({ message: data.message || "Failed to save message.", type: "error" });
       }
     } catch (error) {
-      setLoading(false);
+      console.error("Client error:", error);
       setResponse({ message: "An error occurred. Please try again.", type: "error" });
+    } finally {
+      setLoading(false);
     }
   };
+  
+
+
 
   return (
     <div className={styles.contactContainer} id="contact">
       {/* Left Side - Contact Info */}
       <div className={styles.contactInfo}>
         <h2>Contact Information</h2>
-        <p><FontAwesomeIcon icon={faMapMarkerAlt} /> 12 Nicolson Road, Mill Park- Victoria</p>
+        <p><FontAwesomeIcon icon={faMapMarkerAlt} /> 12 Nicolson Road, Mill Park - Victoria</p>
         <p><FontAwesomeIcon icon={faPhoneAlt} /> +61 0421 3265</p>
         <p><FontAwesomeIcon icon={faEnvelope} /> info.northernmelbourneguitarlesson.com</p>
         <div className={styles.socialIcons}>
@@ -94,7 +130,7 @@ export default function Contact() {
               required
             />
           </div>
-          
+
           <div className={styles.formGroup}>
             <input
               type="email"
@@ -122,7 +158,11 @@ export default function Contact() {
         </form>
 
         {response.message && (
-          <p className={`${styles.responseMessage} ${response.type === "success" ? styles.success : styles.error}`}>
+          <p
+            className={`${styles.responseMessage} ${
+              response.type === "success" ? styles.success : styles.error
+            }`}
+          >
             {response.message}
           </p>
         )}

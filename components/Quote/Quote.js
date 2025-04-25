@@ -1,4 +1,3 @@
-
 'use client';
 
 import { useEffect, useRef, useState } from 'react';
@@ -11,11 +10,14 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
+const quoteImg = "/img/img5.png";
+
 export default function Quote() {
   const formRef = useRef(null);
   const contentRef = useRef(null);
   const [formData, setFormData] = useState({ name: "", email: "", requirement: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [statusMessage, setStatusMessage] = useState({ type: '', text: '' });
 
   useEffect(() => {
     gsap.from(contentRef.current, {
@@ -41,6 +43,7 @@ export default function Quote() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setStatusMessage({ type: '', text: '' }); // Clear any previous messages
 
     try {
       const response = await fetch('/api/freeLesson', {
@@ -52,14 +55,14 @@ export default function Quote() {
       const data = await response.json();
 
       if (response.ok) {
-        alert('Your request has been submitted successfully!');
+        setStatusMessage({ type: 'success', text: 'Your request has been submitted successfully!' });
         setFormData({ name: "", email: "", requirement: "", message: "" });
       } else {
-        alert(data.message || 'Failed to submit. Please try again.');
+        setStatusMessage({ type: 'error', text: data.message || 'Failed to submit. Please try again.' });
       }
     } catch (error) {
       console.error('Error submitting form:', error);
-      alert('An error occurred. Please try again later.');
+      setStatusMessage({ type: 'error', text: 'An error occurred. Please try again later.' });
     }
     setIsSubmitting(false);
   };
@@ -68,7 +71,7 @@ export default function Quote() {
     <div className={styles.container}>
       <div className={styles.leftSide} ref={contentRef}>
         <div className={styles.imageContainer}>
-          <img src="../img3.png" alt="Guitar" className={styles.wideImage} />
+          <img src={quoteImg} alt="Guitar" className={styles.wideImage} />
         </div>
         <h2 className={styles.heading}>Master the Guitar with Expert-Led Lessons.</h2>
         <p className={styles.text}>Unlock your musical potential with personalised guitar lessons from skilled instructors.</p>
@@ -78,9 +81,11 @@ export default function Quote() {
           <a href="#"><FontAwesomeIcon icon={faLinkedinIn} className={styles.icon} /></a>
         </div>
       </div>
+
       <div className={styles.rightSide} ref={formRef}>
         <form className={styles.form} onSubmit={handleSubmit}>
           <h3 className={styles.formHeading}>Request for a Complimentary Lesson</h3>
+
           <div className={styles.formGroup}>
             <label>Name</label>
             <input type="text" name="name" className={styles.input} value={formData.name} onChange={handleChange} required />
@@ -101,14 +106,23 @@ export default function Quote() {
             <label>Message</label>
             <textarea name="message" className={styles.textarea} rows="4" value={formData.message} onChange={handleChange} required></textarea>
           </div>
+
           <button className={styles.button} type="submit" disabled={isSubmitting}>
             {isSubmitting ? 'Submitting...' : 'Get Quote'}
           </button>
+
+          {/*  Message below form */}
+          {statusMessage.text && (
+            <p
+              className={`${styles.statusMessage} ${
+                statusMessage.type === 'success' ? styles.success : styles.error
+              }`}
+            >
+              {statusMessage.text}
+            </p>
+          )}
         </form>
       </div>
     </div>
   );
 }
-
-
-

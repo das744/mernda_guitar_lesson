@@ -1,25 +1,27 @@
-import { Resend } from 'resend';
-
-const resend = new Resend(process.env.RESEND_API_KEY);
+// pages/api/subscribe.js
+import { db } from "@/lib/firebase";
+import { collection, addDoc } from "firebase/firestore";
 
 export default async function handler(req, res) {
-  if (req.method !== 'POST') {
-    return res.status(405).json({ message: 'Method Not Allowed' });
+  if (req.method !== "POST") {
+    return res.status(405).json({ message: "Method Not Allowed" });
   }
 
   const { email } = req.body;
 
+  if (!email) {
+    return res.status(400).json({ message: "Email is required" });
+  }
+
   try {
-    const response = await resend.emails.send({
-      from: 'Your Website <noreply@yourdomain.com>',
-      to: process.env.RECIPIENT_EMAIL,
-      subject: `New Newsletter Subscription`,
-      text: `A new user has subscribed to your newsletter: ${email}`,
+    await addDoc(collection(db, "subscriptions"), {
+      email,
+      subscribedAt: new Date(),
     });
 
-    return res.status(200).json({ message: 'Subscription successful', response });
+    return res.status(200).json({ message: "Subscription successful!" });
   } catch (error) {
-    console.error('Subscription error:', error);
-    return res.status(500).json({ message: 'Failed to subscribe', error });
+    console.error("Error saving subscription:", error);
+    return res.status(500).json({ message: "Failed to subscribe" });
   }
 }

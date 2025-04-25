@@ -168,3 +168,17 @@
 .button:hover {
   background-color: var(--tertiary);
 }
+
+.statusMessage {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.success {
+  color: green;
+}
+
+.error {
+  color: red;
+}

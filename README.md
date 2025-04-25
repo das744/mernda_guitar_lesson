@@ -18,16 +18,88 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
+## project info
+## Guitar Lesson Website
+    A modern and responsive website where users can explore guitar lessons and request a complimentary lesson via a form. Submitted form data is stored securely using Firebase Firestore.
 
-To learn more about Next.js, take a look at the following resources:
+## Features
+    Responsive UI for all devices
+    Animated transitions using GSAP
+    Firebase Firestore integration
+    Clean and minimal design
+    Form validation and submission feedback
+    Social media links
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📁 Folder Structure
+.
+├── public/
+│   └── img/
+├── components/
+│   └── Quote.js          # Main form component
+├── pages/
+│   └── api/
+│       └── freeLesson.js # API route to handle form submissions
+├── styles/
+│   └── Quote.module.css  # Component-specific styles
+├── firebase/
+│   └── firebase.js       # Firebase setup and Firestore initialization
+└── README.md
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## ⚙️ Technologies Used
+    React / Next.js – Framework for building the website
+    GSAP – Smooth and modern animations
+    Firebase Firestore – Backend to store submitted user data
+    Font Awesome – Icons
+    CSS Modules – Scoped and clean styling
+
+## 🧪 How It Works
+    1.Visitors land on the site and see an engaging section encouraging them to book a free guitar lesson.
+
+## The form captures:
+    Name
+    Email
+    Requirement (Online / In-Person)
+    Message
+
+## On submission:
+    Data is sent to /api/freeLesson.js
+    Saved securely to Firebase Firestore
+    A success message is shown below the form
+
+## 🔧 Setup Instructions
+    Clone the repo:
+    git clone https://github.com/your-username/guitar-lesson-site.git
+
+## Navigate to the project folder:
+    cd guitar-lesson-site
+
+Install dependencies:
+    npm install
+
+## Set up Firebase:
+    Create a Firebase project at firebase.google.com
+    Enable Firestore in the Firebase console
+    Create a firebase/firebase.js file with your config:
+
+    import { initializeApp } from "firebase/app";
+    import { getFirestore } from "firebase/firestore";
+
+    const firebaseConfig = {
+    apiKey: "YOUR_API_KEY",
+    authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+    projectId: "YOUR_PROJECT_ID",
+    storageBucket: "YOUR_PROJECT_ID.appspot.com",
+    messagingSenderId: "YOUR_SENDER_ID",
+    appId: "YOUR_APP_ID",
+    };
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    export { db };
+
+## Start the development server:
+    npm run dev
 
 ## Deploy on Vercel
 
