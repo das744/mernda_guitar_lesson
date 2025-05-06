@@ -124,8 +124,8 @@ const Footer = () => {
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.companyInfo}>
-          <h2>MyGuitar</h2>
-          <p>At MyGuitar, we’re passionate about helping people learn and grow as musicians. Our guitar lessons are designed to inspire, challenge, and guide you on your musical path.</p>
+          <h2>MGL</h2>
+          <p>At MGL, we’re passionate about helping people learn and grow as musicians. Our guitar lessons are designed to inspire, challenge, and guide you on your musical path.</p>
         </div>
 
         <div className={styles.navLinks}>
