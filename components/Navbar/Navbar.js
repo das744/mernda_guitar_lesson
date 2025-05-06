@@ -52,7 +52,7 @@ const Navbar = () => {
     <nav className={styles.navbar}>
       {/* Left Side */}
       <div className={styles.navbarLeft}>
-        <div className={styles.logo}>Logo</div>
+        <div className={styles.logo}>MGL</div>
         <div className={styles.navLinks}>
           <a href="#about" className="nav-item"> About</a>
           <a href="#services" className="nav-item"> Services</a>
