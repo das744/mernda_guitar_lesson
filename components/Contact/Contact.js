@@ -16,7 +16,7 @@ import {
   faLinkedinIn,
 } from "@fortawesome/free-brands-svg-icons";
 
-import { db } from "@/lib/firebase"; // Make sure this is correct path to your Firebase config
+import { db } from "@/lib/firebase"; 
 import { collection, addDoc } from "firebase/firestore";
 
 export default function Contact() {
